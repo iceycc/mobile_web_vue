@@ -12,11 +12,11 @@
         <!-- 九宫格 -->
         <my-ul>
             <my-li v-for="(router,index) in homeRouters" :key="index">
-                <a href="">
+                <router-link :to="router.router">
                     <div :class="'back-img '+router.className">
                         {{router.title}}
                     </div>
-                </a>
+                </router-link>
             </my-li>
         </my-ul>
     </div>
@@ -36,35 +36,34 @@ export default {
       homeRouters: [
         {
           className: "news",
-          title: "新闻列表"
+          title: "新闻列表",
+          router: { name: "news.list" }
         },
         {
-          className: "news",
-          title: "新闻列表"
+          className: "pic",
+          title: "图文分享",
+          router: { name: "news.list" }
+          
         },
         {
-          className: "news",
-          title: "新闻列表"
+          className: "goods",
+          title: "商品列表",
+          router: { name: "news.list" }
         },
         {
-          className: "news",
-          title: "新闻列表"
+          className: "feedback",
+          title: "留言反馈",
+          router: { name: "news.list" }
         },
         {
-          className: "news",
-          title: "新闻列表"
+          className: "search",
+          title: "搜索资讯",
+          router: { name: "news.list" }
         },
         {
-          className: "news",
-          title: "新闻列表"
-        },
-        {
-          className: "news",
-          title: "新闻列表"
-        },
-        {
-          className: "news",
-          title: "新闻列表"
+          className: "callme",
+          title: "联系我们",
+          router: { name: "news.list" }
         }
       ]
     };
@@ -94,27 +93,26 @@ export default {
   font-size: 20px;
   font-family: "Microsoft YaHei";
 }
-li a{
-    color:black;
-
+li a {
+  color: black;
 }
 /*图片*/
 .news {
-    background-image: url(../../static/img/news.png);
+  background-image: url(../../static/img/news.png);
 }
 .pic {
-    background-image: url(../../static/img/picShare.png);
+  background-image: url(../../static/img/picShare.png);
 }
-.goods{
-    background-image: url(../../static/img/goodShow.png)
+.goods {
+  background-image: url(../../static/img/goodShow.png);
 }
-.feedback{
-    background-image: url(../../static/img/feedback.png)
+.feedback {
+  background-image: url(../../static/img/feedback.png);
 }
-.search{
-    background-image: url(../../static/img/search.png)
+.search {
+  background-image: url(../../static/img/search.png);
 }
-.callme{
-    background-image: url(../../static/img/callme.png)
+.callme {
+  background-image: url(../../static/img/callme.png);
 }
 </style>
