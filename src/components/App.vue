@@ -41,7 +41,8 @@
   }
 </script>
 <style scoped>
-.main-sf{
-  /* height: 100%; */
-}
+   .mint-tabbar{
+    position: fixed;
+    bottom:0;
+   } 
 </style>

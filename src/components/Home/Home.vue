@@ -42,7 +42,8 @@ export default {
         {
           className: "pic",
           title: "图文分享",
-          router: { name: "news.list" }
+          // 传参  显示全部的话参数为0
+          router: { name: "photo.list",params:{cateId:0} }
           
         },
         {

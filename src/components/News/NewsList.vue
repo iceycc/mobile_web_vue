@@ -1,24 +1,21 @@
 <template>
     <div class="tmpl">
-      <div class="cms-s-header">
-        <h1 >&nbsp<</h1>
-        <h1 class="page-title">Pull up</h1>
-      </div> 
 
+        <nav-bar title="新闻列表"></nav-bar>
     
     <div class="demo">
       <ul>
             <li v-for="news in newsList" :key="news.id">
-                <a href="#">
+                <router-link :to="{name:'news.detail',query:{newsId:news.id}}">
                     <img class="" :src="news.img_url">
                     <div >
                         <span>{{news.title|convertTitle(13)}}</span>
                         <div class="news-desc">
                             <p>点击数:{{news.click}}</p>
-                            <p>发表时间:{{news.add_time|convert-time}}</p>
+                            <p>发表时间:{{news.add_time|convertTime}}</p>
                         </div>
                     </div>
-                </a>
+                </router-link>
             </li>
             <li class="line"></li>
         </ul>
@@ -31,6 +28,7 @@
         created(){
             this.$axios.get('getnewslist')
             .then(res=>{
+                console.log(res.data.message)
                     this.newsList = res.data.message;
             })
             .catch(err=>{

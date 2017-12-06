@@ -10,8 +10,10 @@ import Axios from 'axios';
 // 注册全局组件
 import MyLi from './components/Commons/MyLi.vue';
 import MyUl from './components/Commons/MyUl.vue';
+import NavBar from './components/Commons/NavBar.vue';
 Vue.component(MyLi.name, MyLi);
 Vue.component(MyUl.name, MyUl)
+Vue.component(NavBar.name, NavBar)
 
 // 
 Vue.use(VueRouter);
@@ -25,7 +27,7 @@ import './static/css/global.css';
 import Moment from 'moment';
 // 注册全局过滤器
 Vue.filter('convertTime',function(value){
-  return Moment(value).from('YYYY-MM-DD');
+  return Moment(value).format('YYYY-MM-DD');
 });
 // 处理title太长的问题
 Vue.filter('convertTitle', (value, limit)=>{
@@ -46,12 +48,21 @@ import Home from './components/Home/Home.vue';
 import Search from './components/Search/Search.vue';
 import Member from './components/Member/Member.vue';
 import Shopcart from './components/Shopcart/Shopcart.vue';
-import NewsList from './components/News/NewsList.vue'
+import NewsList from './components/News/NewsList.vue';
+import NewsDetail from './components/News/NewsDetail.vue'
+import PhotoList from './components/Photo/PhotoList.vue'
+import PhotoDetail from './components/Photo/PhotoDetail.vue'
 
+
+//VuePreview 开始
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview)
+//VuePreview 结束
 
 
 Vue.prototype.$axios = Axios;
 
+// 
 Axios.defaults.baseURL = 'http://vue.studyit.io/api/';
 
 // 路由
@@ -68,7 +79,12 @@ router.addRoutes([
   //购物车
   { name: 'shopcart', path: '/shopcart', component: Shopcart},
   //新闻列表页
-  {name:'news.list',path:'/news/list',component:NewsList}
+  {name:'news.list',path:'/news/list',component:NewsList},
+  // 新闻详细页
+  { name:'news.detail',path:'/news/detail',component:NewsDetail},
+  //图文分享页  
+  { name: 'photo.list', path: '/poto/list/:cateId', component: PhotoList },
+  { name: 'photo.detail', path: '/poto/detail/:imgId', component: PhotoDetail }
 ])
 
 
