@@ -11,9 +11,12 @@ import Axios from 'axios';
 import MyLi from './components/Commons/MyLi.vue';
 import MyUl from './components/Commons/MyUl.vue';
 import NavBar from './components/Commons/NavBar.vue';
+import Comments from './components/Commons/Comments.vue'
+
 Vue.component(MyLi.name, MyLi);
 Vue.component(MyUl.name, MyUl)
 Vue.component(NavBar.name, NavBar)
+Vue.component(Comments.name, Comments)
 
 // 
 Vue.use(VueRouter);
@@ -52,7 +55,8 @@ import NewsList from './components/News/NewsList.vue';
 import NewsDetail from './components/News/NewsDetail.vue'
 import PhotoList from './components/Photo/PhotoList.vue'
 import PhotoDetail from './components/Photo/PhotoDetail.vue'
-import Text from './components/text.vue'
+// import Comments from './components/Commons/Comments.vue'
+import GoodsList from './components/Goods/GoodsList.vue'
 
 
 //VuePreview 开始
@@ -65,7 +69,7 @@ Vue.prototype.$axios = Axios;
 
 // 
 Axios.defaults.baseURL = 'http://vue.studyit.io/api/';
-// Axios.defaults.baseURL = 'http://vue.studyit.io/api/';
+// Axios.defaults.baseURL = 'http://192.168.159.66:12345/api/';
 
 // 路由
 let router = new VueRouter()
@@ -87,8 +91,10 @@ router.addRoutes([
   //图文分享页  
   { name: 'photo.list', path: '/poto/list/:cateId', component: PhotoList },
   { name: 'photo.detail', path: '/poto/detail/:imgId', component: PhotoDetail },
-  // 测试评论路由
-  {name:'text',path:'/text',component:Text}
+  // 评论  测试完毕
+  // { name: 'comments', path: '/comments', component: Comments},
+  // 商品列表
+  { name: 'good.list', path: '/good/list', component:GoodsList}
 ])
 
 
