@@ -12,11 +12,13 @@ import MyLi from './components/Commons/MyLi.vue';
 import MyUl from './components/Commons/MyUl.vue';
 import NavBar from './components/Commons/NavBar.vue';
 import Comments from './components/Commons/Comments.vue'
+import MySwipe from './components/Commons/MySwipe.vue'
 
 Vue.component(MyLi.name, MyLi);
 Vue.component(MyUl.name, MyUl)
 Vue.component(NavBar.name, NavBar)
 Vue.component(Comments.name, Comments)
+Vue.component(MySwipe.name, MySwipe)
 
 // 
 Vue.use(VueRouter);
@@ -57,6 +59,7 @@ import PhotoList from './components/Photo/PhotoList.vue'
 import PhotoDetail from './components/Photo/PhotoDetail.vue'
 // import Comments from './components/Commons/Comments.vue'
 import GoodsList from './components/Goods/GoodsList.vue'
+import GoodsDetail from './components/Goods/GoodsDetail.vue'
 
 
 //VuePreview 开始
@@ -94,7 +97,9 @@ router.addRoutes([
   // 评论  测试完毕
   // { name: 'comments', path: '/comments', component: Comments},
   // 商品列表
-  { name: 'good.list', path: '/good/list', component:GoodsList}
+  { name: 'good.list', path: '/good/list', component:GoodsList},
+  // 商品列表
+  { name: 'good.detail', path:'/good/detail/:goodId',component:GoodsDetail}
 ])
 
 

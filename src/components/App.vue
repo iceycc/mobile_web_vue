@@ -1,8 +1,8 @@
 <template>  
   <div>
-    <mt-header title="首页"></mt-header>
-    <div class="main-sf"><router-view></router-view></div>
-    <mt-tabbar v-model="selected">
+    <mt-header title="首页" ref="header"></mt-header>
+    <div class="main-sf"><router-view class="tmpl;" :appRefs="$refs"></router-view></div>
+    <mt-tabbar v-model="selected" ref="footer">
     <mt-tab-item id="home">
       <img slot="icon" src="../static/img/index.png">
       首页

@@ -1,14 +1,13 @@
 <template>
     <div>
-        <mt-swipe :auto="4000">
+        <!-- <mt-swipe :auto="4000">
           <mt-swipe-item v-for="(pic,index) in imgs" :key="index">
-              <!--  -->
               <a :href="pic.url">
                   <img :src="pic.img" alt="">
               </a>
-          </mt-swipe-item>
-        </mt-swipe>
-
+          </mt-swipe-item>          
+        </mt-swipe> -->
+        <my-swipe url='getlunbo'></my-swipe> 
         <!-- 九宫格 -->
         <my-ul>
             <my-li v-for="(router,index) in homeRouters" :key="index">
