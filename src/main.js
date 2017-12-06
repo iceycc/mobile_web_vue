@@ -52,6 +52,7 @@ import NewsList from './components/News/NewsList.vue';
 import NewsDetail from './components/News/NewsDetail.vue'
 import PhotoList from './components/Photo/PhotoList.vue'
 import PhotoDetail from './components/Photo/PhotoDetail.vue'
+import Text from './components/text.vue'
 
 
 //VuePreview 开始
@@ -64,6 +65,7 @@ Vue.prototype.$axios = Axios;
 
 // 
 Axios.defaults.baseURL = 'http://vue.studyit.io/api/';
+// Axios.defaults.baseURL = 'http://vue.studyit.io/api/';
 
 // 路由
 let router = new VueRouter()
@@ -84,7 +86,9 @@ router.addRoutes([
   { name:'news.detail',path:'/news/detail',component:NewsDetail},
   //图文分享页  
   { name: 'photo.list', path: '/poto/list/:cateId', component: PhotoList },
-  { name: 'photo.detail', path: '/poto/detail/:imgId', component: PhotoDetail }
+  { name: 'photo.detail', path: '/poto/detail/:imgId', component: PhotoDetail },
+  // 测试评论路由
+  {name:'text',path:'/text',component:Text}
 ])
 
 
